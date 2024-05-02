@@ -132,32 +132,7 @@ df = df.sort_values(by=['callsign','timeH']).reset_index(drop=True)
 df = df[['timeH', 'lat', 'lon', 'callsign']]
 
 
-space_angleRange_400To200nm = {
-        'north_1_400To200nm': [(40, 65)],
-        'north_2_400To200nm': [(65, 90)],
-        'north_3_400To200nm': [(90, 120)],
-        'north_4_400To200nm': [(120, 135)],
-        'west_400To200nm': [(135, 180), (-180, -105)],# west
-        'south_400To200nm': [(-105, -60)],
-        'east_1_400To200nm': [(-60, -30)],
-        'east_2_400To200nm': [(-30, 0)],
-        'east_3_400To200nm': [(0, 20)],
-        'east_4_400To200nm': [(20, 40)],}
 
-space_angleRange_200To50nm = {
-    'north_200To50nm': [(40, 120)],
-    'west_200To50nm': [(120, 180), (-180, -105)],# west
-    'south_200To50nm': [(-105, -60)],
-    'east_200To50nm': [(-60, 40)],}
-
-space_angleRange_in50nm = {
-    'north_in50nm': [(45, 105)],
-    'west_1_in50nm': [(105, 180)],# west
-    'west_2_in50nm': [((-180, -120))],
-    'south_1_in50nm': [(-75, -45)],
-    'south_2_in50nm': [(-120, -75)],
-    'east_1_in50nm': [(-45, 0)],
-    'east_2_in50nm': [(0, 45)],}
 
 space_angRange = [space_angleRange_400To200nm]  # List of dictionaries
 combined_dict = {k: v for d in space_angRange for k, v in d.items()}
